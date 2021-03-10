@@ -11,8 +11,6 @@ public:
 
 	void get_card(Deck &deck);
 	void print_hand_deck();
-
-	int size_hand = 2;
 private:
 	vector<Card> hand_deck;
 };
