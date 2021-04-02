@@ -23,13 +23,3 @@ void Card::print_card()
 	cout << rank << " " << suit << endl;
 }
 
-void Card::set_rank(string _rank)
-{
-	rank = _rank;
-}
-
-void Card::set_suit(string _suit)
-{
-	suit = _suit;
-}
-

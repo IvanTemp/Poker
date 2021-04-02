@@ -8,8 +8,9 @@ public:
 	~Card();
 	void print_card();
 
-	void set_rank(std::string _rank);
-	void set_suit(std::string _suit);
+	std::string get_rank() {
+		return rank;
+	}
 private:
 	std::string rank, suit;
 };

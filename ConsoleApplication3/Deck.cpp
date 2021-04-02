@@ -5,9 +5,7 @@ Deck::Deck()
 	for (int i = 0; i < SUITS.size(); i++) {
 		for (int j = 0; j < RANKS.size(); j++)
 		{
-			Card card;
-			card.set_rank(RANKS[j]);
-			card.set_suit(SUITS[i]);
+			Card card(RANKS[j], SUITS[i]);
 			deck.push_back(card);
 		}
 	}
@@ -33,6 +31,7 @@ Card Deck::get_card()
 void Deck::shuffle()
 {
 	auto rng = std::default_random_engine{};
+	std::shuffle(std::begin(deck), std::end(deck), rng);
 	std::shuffle(std::begin(deck), std::end(deck), rng);
 }
 
