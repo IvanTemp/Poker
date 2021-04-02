@@ -38,4 +38,5 @@ void Deck::shuffle()
 
 Deck::~Deck()
 {
+
 }
