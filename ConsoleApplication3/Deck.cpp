@@ -30,6 +30,7 @@ Card Deck::get_card()
 
 void Deck::shuffle()
 {
+	// TODO: сделать перемешивание, зависящее от системного времени
 	auto rng = std::default_random_engine{};
 	std::shuffle(std::begin(deck), std::end(deck), rng);
 	std::shuffle(std::begin(deck), std::end(deck), rng);
