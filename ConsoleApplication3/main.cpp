@@ -1,25 +1,7 @@
-﻿#include <iostream>
-#include <fstream>
-#include <stdexcept>
-#include <vector>
-#include <string>
-#include <algorithm>
-#include <random>
-#include <time.h>
+﻿#include "Application.h"
 
-#include "Card.h"
-#include "Deck.h"
-#include "Hand.h"
-
-
-#include <set>
-
-
-using namespace std;
-
-int main() 
-{	
-	
-
+int main() {	
+    Application app;
+    app.play();
     return 0;
 }

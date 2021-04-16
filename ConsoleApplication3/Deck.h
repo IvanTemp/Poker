@@ -14,9 +14,10 @@ public:
 	Card get_card();
 	void shuffle();
 	~Deck();
+	friend std::ostream& operator<< (std::ostream& out, const Deck& point);
 private:
-	vector<string> RANKS = { "2", "3", "4", "5", "6", "7",
-							"8", "9", "10", "J", "Q", "K", "A" };
+	vector<size_t> RANKS = { 2, 3, 4, 5, 6, 7,
+							8, 9, 10, 11, 12, 13, 14 };
 	vector<string> SUITS = {
 		"D", "H", "V", "P" // обозначить масти карт
 	};

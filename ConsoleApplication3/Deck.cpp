@@ -39,3 +39,8 @@ Deck::~Deck()
 {
 
 }
+
+std::ostream& operator<<(std::ostream& out, const Deck& deck)
+{
+	return out;
+}

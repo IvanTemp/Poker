@@ -4,14 +4,18 @@ class Card
 {
 public:
 	Card();
-	Card(std::string _rank, std::string _suit);
+	Card(size_t _rank, std::string _suit);
 	~Card();
-	void print_card();
+	void print_card() const;
 
-	std::string get_rank() {
+	const size_t get_rank() {
 		return rank;
 	}
+	const std::string get_suit() {
+		return suit;
+	}
+	friend bool operator< (const Card& c1, const Card& c2);
 private:
-	std::string rank, suit;
+	size_t rank;
+	std::string suit;
 };
-

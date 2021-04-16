@@ -1,4 +1,5 @@
 #include "Application.h"
+#include "Checker.h"
 
 Application::Application()
 {
@@ -24,18 +25,40 @@ void Application::set_hand_deck(Deck& deck, Hand& hand) {
 void Application::play()
 {
 	// по умолчанию перемешивается при создании
+	
 	Deck deck;
-	Hand hand;
+	size_t total_score = 0;
+	size_t score = 0;
 	
 	string answer;
 
 	do
 	{
 		set_game_deck(deck);
-		set_hand_deck(deck, hand);
 
+		sort(game_deck.begin(), game_deck.end());
+
+		for (auto card : game_deck) {
+			card.print_card();
+		}
+
+		// проверить комбинации и записать счет
+		Checker checker;
+		score = checker.WinnerCombination(game_deck);
+		cout << "Your score from this combination: " << score << endl;
+
+		cout << "Your total score: " << total_score << endl;
+		cout << "Would you like to play again? (y/n)" << endl;
+		cin >> answer;
+		if (answer == "y")
+		{
+			total_score += score;
+			score = 0;
+			continue;
+		}
+		else
+			break;
 	} while (true);
 
-
-
+	cout << "Your total score: " << total_score << endl;
 }
