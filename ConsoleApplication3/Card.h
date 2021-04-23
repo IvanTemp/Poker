@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include <fstream>
 class Card
 {
 public:
@@ -15,6 +16,8 @@ public:
 		return suit;
 	}
 	friend bool operator< (const Card& c1, const Card& c2);
+
+	friend std::ostream& operator<< (std::ostream& out, const Card& card);
 
 private:
 	size_t rank;

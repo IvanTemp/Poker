@@ -34,6 +34,7 @@ void Application::play()
 
 	do
 	{
+		game_deck = {};
 		set_game_deck(deck);
 
 		sort(game_deck.begin(), game_deck.end());

@@ -1,3 +1,6 @@
+#include <string>
+#include <time.h>
+#include <algorithm>
 #include "Deck.h"
 
 Deck::Deck()
@@ -30,18 +33,19 @@ Card Deck::get_card()
 
 void Deck::shuffle()
 {
-	// TODO: сделать перемешивание, зависящее от системного времени
-	auto rng = std::default_random_engine{};
-	std::shuffle(std::begin(deck), std::end(deck), rng);
-	std::shuffle(std::begin(deck), std::end(deck), rng);
+	srand(unsigned(time(NULL)));
+	std::random_shuffle(deck.begin(), deck.end());
 }
 
 Deck::~Deck()
 {
-
 }
 
 std::ostream& operator<<(std::ostream& out, const Deck& deck)
 {
+	std::string space = " ";
+	for (const auto& card : deck.deck) {
+		out << card << '\n';
+	}
 	return out;
 }
