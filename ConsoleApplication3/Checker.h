@@ -13,9 +13,8 @@ public:
 	Checker();
 	~Checker();
 
-	bool OlderCard(vector<Card>& game_deck) {
-		return false;
-	}
+	bool OlderCard(vector<Card>& game_deck);
+
 	bool Pair(vector<Card>& game_deck) {
 		for (size_t i = 0; i < game_deck.size(); i++)
 		{

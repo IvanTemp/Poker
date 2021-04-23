@@ -15,6 +15,7 @@ public:
 		return suit;
 	}
 	friend bool operator< (const Card& c1, const Card& c2);
+
 private:
 	size_t rank;
 	std::string suit;
